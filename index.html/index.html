@@ -133,7 +133,59 @@
     </footer>
     
     <script src="script.js"></script>
-  
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão para Mudar a Cor do Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #texto {
+            color: black;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        #botao {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #botao:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <p id="texto">Este é o texto cujo a cor será alterada.</p>
+    <button id="botao" onclick="mudarCorTexto()">Mudar Cor</button>
+
+    <script>
+        function mudarCorTexto() {
+            const texto = document.getElementById("texto");
+            const cores = ["red", "green", "blue", "purple", "orange"];
+            const corAtual = texto.style.color;
+            let novaCor;
+
+            do {
+                novaCor = cores[Math.floor(Math.random() * cores.length)];
+            } while (novaCor === corAtual);
+
+            texto.style.color = novaCor;
+        }
+    </script>
+</body>
+</html>
+
 </body>
 
 </html>
