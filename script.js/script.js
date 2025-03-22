@@ -18,3 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     
 })
+
+document.getElementById("mudar-cor").addEventListener("click", function () {
+    const texto = document.querySelectorAll("#texto-site");
+    const cores = ["red", "blue", "green", "purple", "orange"];
+    texto.forEach(t => {
+        const novaCor = cores[Math.floor(Math.random() * cores.length)];
+        t.style.color = novaCor;
+
+    })
+})
